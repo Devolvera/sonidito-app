@@ -1,14 +1,24 @@
 <head>
-  <title>Sonidito App</title>
+  <title>Beer App</title>
+  <meta name="viewport" content="user-scalable=0, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi">
+  <link rel="stylesheet" href="http://code.ionicframework.com/1.0.0-beta.13/css/ionic.css">
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css">
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
+  {{> app}}
+  
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="app">
+
+  {{#ionTabs class="tabs-assertive tabs-icon-top" cache-view="false"}}
+    {{#ionTab title="Home" href="/" icon="icon ion-home"}}
+    {{/ionTab}}
+
+    {{#ionTab title="About" href="/about" icon="icon ion-ios-information"}}
+    {{/ionTab}}
+
+  {{/ionTabs}}
+
 </template>
