@@ -10,10 +10,18 @@ Router.route('/about', function() {
   name: 'tab.about'
 });
 
+
+
 Template.Home.events({
   "click .button": function (event) {
-    var button = new Howl({
-      urls: ['sonidito.mp3', 'sonidito.ogg, sonidito.m4a']
-    }).play();
+    var buttonPress = new Howl({
+      urls: ['sonidito.mp3'],
+      buffer: true,
+      onloaderror: function() {
+        alert('There was a load error.');
+      }
+    });
+
+    buttonPress.play();
   }
 });
